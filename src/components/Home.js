@@ -1,12 +1,10 @@
-import React from 'react';
-import Search from './Search';
-import Splash from './Splash';
+import React from "react";
+import Search from "./Search";
 
 const Home = () => (
-    <div id="home">
-      <Splash />
-      <Search />
-    </div>
-  );
+  <div id="home">
+    <Search />
+  </div>
+);
 
 export default Home;
