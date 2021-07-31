@@ -1,5 +1,4 @@
 import React from "react";
-import ResultText from "./ResultText";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileImage, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -28,9 +27,7 @@ const ResultItem = ({ result }) => {
           r/{subreddit}
           <div className="result-author">u/{author}</div>
         </div>
-        {selftext.length ? (
-          <ResultText isSpoiler={thumbnail === "spoiler"} text={selftext} />
-        ) : null}
+        {selftext}
       </div>
     </div>
   );
