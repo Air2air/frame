@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SearchInput from "./SearchInput";
-import ResultsList from "./ResultsList";
 
 
 const Search = () => {
@@ -36,7 +35,25 @@ const Search = () => {
       {isLoading ? (
         <div className="loading">Searching Reddit...</div>
       ) : (
-        <ResultsList results={results} />
+        <>
+        {results.length
+          ? results.map((result) => (
+            <div className="result-item">
+            <div className="result-thumbnail">
+              {result.data.thumbnail && <img src={result.data.thumbnail} alt="" />}
+            </div>
+            <div className="result-content">
+              <div className="result-title">{result.data.title}</div>
+              <div className="result-details">
+                r/{result.data.subreddit}
+                <div className="result-author">u/{result.data.author}</div>
+              </div>
+              {result.data.selftext}
+            </div>
+          </div>
+            ))
+          : "No results found"}
+      </>
       )}
     </>
   );
