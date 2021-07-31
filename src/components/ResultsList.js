@@ -7,13 +7,13 @@ const Results = ({ results }) => {
   }
 
   return (
-    <div id="results-section">
+    <>
       {results.length
         ? results.map((result) => (
             <ResultItem key={result.data.id} result={result.data} />
           ))
-        : null}
-    </div>
+        : "No results found"}
+    </>
   );
 };
 

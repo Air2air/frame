@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchInput from "./SearchInput";
 import ResultsList from "./ResultsList";
 
+
 const Search = () => {
   const [results, setResults] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -30,14 +31,14 @@ const Search = () => {
   };
 
   return (
-    <div id="search-section">
+    <>
       <SearchInput fetchQuery={fetchResults} />
       {isLoading ? (
         <div className="loading">Searching Reddit...</div>
       ) : (
         <ResultsList results={results} />
       )}
-    </div>
+    </>
   );
 };
 
